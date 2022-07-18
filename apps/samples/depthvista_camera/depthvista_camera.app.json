@@ -8,20 +8,20 @@
 	"viewers"
   ],
   "config": {
-    "camera" : {
-      "depthvista" : {
+    "depthvista" : {
+      "camera" : {
         "rows": 480,
         "cols": 640,
 		"enable_depth": true,
-        "enable_color": true,
+        "enable_rgb": true,
         "enable_ir": true,
-		"enable_long_range": false
+		"enable_long_range": true
       }
     },
 	"viewer": {
       "depth_short": {
         "reduce_scale": 2,
-        "camera_name": "camera - depth - short",
+        "camera_name": "DepthVistaCamera - Depth - Short",
         "min_visualization_depth": 0.2,
         "max_visualization_depth": 1.2,
         "colormap": [
@@ -35,7 +35,7 @@
       },
 	  "depth_long": {
         "reduce_scale": 2,
-        "camera_name": "camera - depth - long",
+        "camera_name": "DepthVistaCamera - Depth - Long",
         "min_visualization_depth": 0.5,
         "max_visualization_depth": 3.25,
         "colormap": [
@@ -49,7 +49,7 @@
       },
       "rgb": {
         "reduce_scale": 2,
-        "camera_name": "camera - rgb"
+        "camera_name": "DepthVistaCamera - RGB"
       }
 	},
 	"point_cloud": {
@@ -58,7 +58,7 @@
       },
       "pose": {
         "lhs_frame": "cloud",
-        "rhs_frame": "camera",
+        "rhs_frame": "depthvista",
         "pose": [
           0.270598,
           -0.653281,
@@ -135,14 +135,14 @@
   "graph": {
     "nodes": [
       {
-        "name": "camera",
+        "name": "depthvista",
         "components": [
 		  {
             "name": "message_ledger",
             "type": "isaac::alice::MessageLedger"
           },
           {
-            "name": "depthvista",
+            "name": "camera",
             "type": "isaac::DepthVistaCamera"
           }
         ]
@@ -209,47 +209,47 @@
     ],
     "edges": [
 	  {
-        "source": "camera/depthvista/depth_short",
+        "source": "depthvista/camera/depth_short",
         "target": "viewer/depth_short/depth"
       },
 	  {
-        "source": "camera/depthvista/depth_long",
+        "source": "depthvista/camera/depth_long",
         "target": "viewer/depth_long/depth"
       },
 	  {
-        "source": "camera/depthvista/depth_intrinsics",
+        "source": "depthvista/camera/depth_intrinsics",
         "target": "viewer/depth_short/intrinsics"
       },
 	  {
-        "source": "camera/depthvista/depth_intrinsics",
+        "source": "depthvista/camera/depth_intrinsics",
         "target": "viewer/depth_long/intrinsics"
       },
       {
-        "source": "camera/depthvista/rgb",
+        "source": "depthvista/camera/rgb",
         "target": "viewer/rgb/image"
       },
 	  {
-        "source": "camera/depthvista/color_intrinsics",
+        "source": "depthvista/camera/rgb_intrinsics",
         "target": "viewer/rgb/intrinsics"
       },
 	  {
-        "source": "camera/depthvista/ir",
+        "source": "depthvista/camera/ir",
         "target": "viewer/ir/image"
       },
 	  {
-        "source": "camera/depthvista/depth_short",
+        "source": "depthvista/camera/depth_short",
         "target": "point_cloud/depth_to_pointcloud/depth"
       },
 	  {
-        "source": "camera/depthvista/depth_long",
+        "source": "depthvista/camera/depth_long",
         "target": "point_cloud/depth_to_pointcloud/depth"
       },
       {
-        "source": "camera/depthvista/depth_intrinsics",
+        "source": "depthvista/camera/depth_intrinsics",
         "target": "point_cloud/depth_to_pointcloud/intrinsics"
       },
       {
-        "source": "camera/depthvista/rgb",
+        "source": "depthvista/camera/rgb",
         "target": "point_cloud/depth_to_pointcloud/color"
       },
       {
