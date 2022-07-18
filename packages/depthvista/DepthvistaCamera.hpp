@@ -42,7 +42,7 @@ class DepthVistaCamera : public isaac::alice::Codelet {
   ISAAC_PARAM(bool, enable_depth, true);
   ISAAC_PARAM(bool, enable_rgb, true);
   ISAAC_PARAM(bool, enable_ir, true);
-  ISAAC_PARAM(bool, enable_long_range, false);
+  ISAAC_PARAM(bool, enable_long_range, true);
 
 private:
   std::unique_ptr<depthvista::Camera> camera;

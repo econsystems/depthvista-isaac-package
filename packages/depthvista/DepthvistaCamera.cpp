@@ -107,7 +107,8 @@ void DepthVistaCamera::start() {
 	params.mode = get_enable_depth() ? depthvista::MODE::DEPTH : 0;
 	params.mode |= get_enable_rgb() ? depthvista::MODE::RGB : 0;
 	params.mode |= get_enable_ir() ? depthvista::MODE::IR : 0;
-	params.verbose = depthvista::VERBOSITY::NONE;
+	//params.range = get_enable_long_range();
+	params.verbose = depthvista::VERBOSITY::INFO;
 
 	camera = std::make_unique<depthvista::Camera>();
 
@@ -123,6 +124,7 @@ void DepthVistaCamera::start() {
 
 	set_depth_camera_T_rgb_camera(GetCameraExtrinsics(mCalibParams.extrinsics), 0.0);
 
+	//tickPeriodically();
 	tickBlocking();
 }
 
