@@ -24,8 +24,8 @@ def isaac_depthvista_workspace():
     isaac_http_archive(
         name = "depthvista_x86_64",
         build_file = clean_dep("//third_party:depthvista_x86_64.BUILD"),
-        sha256 = "f8baab5c7d831121543b508cb6746572b1420bedcb3341bed11d8a5d6bb848c2",
-		url = "https://www.dropbox.com/s/hrumqzyxgzcurzz/libdepthvistacamera_x86_64.tar.xz?dl=1",
+        sha256 = "83bdcbe44b4c453ac95733157426235863cd38f4b064f1722e8fdaa034377a22",
+		url = "https://www.dropbox.com/s/o3k78py2jzlcf5j/libdepthvistacamera_x86_64.tar.xz?dl=1",
         type = "tar.xz",
         licenses = [],
     )
