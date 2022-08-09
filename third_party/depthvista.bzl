@@ -24,8 +24,8 @@ def isaac_depthvista_workspace():
     isaac_http_archive(
         name = "depthvista_x86_64",
         build_file = clean_dep("//third_party:depthvista_x86_64.BUILD"),
-        sha256 = "83bdcbe44b4c453ac95733157426235863cd38f4b064f1722e8fdaa034377a22",
-		url = "https://www.dropbox.com/s/o3k78py2jzlcf5j/libdepthvistacamera_x86_64.tar.xz?dl=1",
+        sha256 = "bb1976e089c6adcc3d5ae9642d9f1853c2a7ae2b953c969e64dbd5daf4cd2165",
+		url = "https://www.dropbox.com/s/94zog158ei78cmp/libdepthvistacamera_x86_64.tar.xz?dl=1",
         type = "tar.xz",
         licenses = [],
     )
@@ -33,8 +33,8 @@ def isaac_depthvista_workspace():
     isaac_http_archive(
         name = "depthvista_aarch64_jetpack45",
         build_file = clean_dep("//third_party:depthvista_jetpack45.BUILD"),
-        sha256 = "28b41cacfd88d9dc3b860d59b24db9387809b8e27d4884e7aca2a4182a2170c9",
-        url = "https://www.dropbox.com/s/10kxs97h37t7u2b/libdepthvistacamera_jetpack45.tar.xz?dl=1",
+        sha256 = "22f4be36177e216b59b1595bbf965bea822f51c1125f3d09e12e3670604a23c9",
+        url = "https://www.dropbox.com/s/lgl8jx7f2bzibfc/libdepthvistacamera_jetpack45.tar.xz?dl=1",
         type = "tar.xz",
         licenses = [],
     )
